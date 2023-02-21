@@ -19,6 +19,6 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: "design: sync draw.io exported files"
-        commit_user_name: "StephenWike"
+        commit_user_name: "stephenwike"
         commit_user_email: "stephen.c.wise@gmail.com"
-        commit_author: "Stephen Wike"
+        commit_author: "stephenwike"
