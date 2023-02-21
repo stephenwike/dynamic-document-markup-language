@@ -1,0 +1,24 @@
+name: Continuous Build
+
+on: 
+    push:
+        branches:
+            - '*/**'
+            - '*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: generate DDD
+      shell: pwsh
+      run: ./ci/compile-ddd.ps1
+
+    - name: Commit changed files
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "design: sync draw.io exported files"
+        commit_user_name: "StephenWike"
+        commit_user_email: "stephen.c.wise@gmail.com"
+        commit_author: "Stephen Wike"
