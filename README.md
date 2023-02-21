@@ -273,7 +273,7 @@ This is and example of code file reference posted directly to the template body
         var documentStrings = _docBuilder.Parse(template, templateQueue);
         var document = _docBuilder.Build(documentStrings);
         
-        // Write document
-        if (Settings.OutputUri?.LocalPath == null) throw new SystemException("Output Uri should not be null, failed to catch error in validator.");
-        File.WriteAllText(Settings.OutputUri.LocalPath, document);
+        // TODO: TEMPORARY POC - If work, add TOC markup tag and have it create TOC in place (not just at the top of document).
+        document = _docBuilder.AddTOC(document); 
+        
 ```
